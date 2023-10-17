@@ -2,13 +2,8 @@
 
 Team:
 
-<<<<<<< HEAD
 * Jake Enger - Hat Microservice
-* Person 2 - Which microservice?
-=======
-* Person 1 - Which microservice?
 * Peter  - hat microservice?
->>>>>>> main
 
 ## Design
 
