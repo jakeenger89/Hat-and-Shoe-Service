@@ -3,7 +3,7 @@
 Team:
 
 * Jake Enger - Hat Microservice
-* Peter  - hat microservice?
+* Peter  - Shoe Microservice
 
 ## Design
 
