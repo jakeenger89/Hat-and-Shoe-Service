@@ -112,3 +112,4 @@ function ShoeForm({getShoes}){
     </div>
   );
 }
+export default ShoeForm
