@@ -6,12 +6,10 @@ import time
 import json
 import requests
 
+
 sys.path.append("")
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hats_project.settings")
 django.setup()
-
-# Import models from hats_rest, here.
-# from hats_rest.models import Something
 
 
 def get_locations():
@@ -20,10 +18,9 @@ def get_locations():
     for location in content["locations"]:
         LocationVO.objects.update_or_create(
             import_href=location["href"],
-            defaults={"shelf_number": location["shelf_number"],
+            defaults={"closet_name": location["closet_name"],
                       "section_number": location["section_number"],
-                      "closet_name": location["closet_name"],
-                      }
+                      "shelf_number": location["shelf_number"]},
         )
 
 
