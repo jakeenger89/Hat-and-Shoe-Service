@@ -45,6 +45,7 @@ services:
       - ./shoes/api:/app
     depends_on:
       - database
+    command: python manage.py runserver 0.0.0.0:8000
     environment:
       DATABASE_URL: postgres://shoes:password@database:5432/shoes
       WAIT_HOSTS: database:5432
