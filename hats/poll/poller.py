@@ -1,4 +1,4 @@
-from api.hats_rest.models import LocationVO
+
 import django
 import os
 import sys
@@ -10,6 +10,8 @@ import requests
 sys.path.append("")
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hats_project.settings")
 django.setup()
+
+from hats_rest.models import LocationVO
 
 
 def get_locations():
