@@ -28,7 +28,6 @@ def poll():
     while True:
         try:
             get_bins()
-            print("yes")
         except Exception as e:
             print(e, file=sys.stderr)
         time.sleep(10)
