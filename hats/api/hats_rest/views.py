@@ -46,6 +46,15 @@ class HatDetailEncoder(ModelEncoder):
         "location": LocationVODetailEncoder(),
     }
 
+# insomnia json post request
+# {
+#     "fabric": "Anub'Rekhan",
+#     "style_name": "bug",
+#     "color": "RED",
+#     "image_url": "https://example.com/hats/fedora.jpg",
+#     "location": 1
+# }
+
 
 @require_http_methods(["GET", "POST"])
 def api_hat_list(request, location_vo_id=None):

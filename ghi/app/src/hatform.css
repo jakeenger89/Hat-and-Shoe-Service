@@ -1,0 +1,74 @@
+.background-container::before {
+    content: "";
+    background: rgba(0, 86, 179, .3);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: difference;
+  }
+
+  .background-container {
+    background-image: url('https://st4.depositphotos.com/14689206/20166/i/450/depositphotos_201669382-stock-photo-genuine-girl-smile-closed-her.jpg');
+    background-size: cover; /* Adjust the size property as needed */
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: "Brush Script MT", cursive;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Styles for the form inside the background container */
+  .custom-hat-form {
+    background-color: transparent;
+  }
+
+  /* Styles for the text boxes and button */
+  .custom-hat-form .form-control {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+  .custom-hat-form input:focus,
+  .custom-hat-form select:focus {
+    outline: none;
+    border: 2px #4e4e4e;
+  }
+
+  .custom-hat-form button {
+    background-color: #439dfd;
+    color: #fff;
+    border: 1px solid;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-hat-form button:hover {
+    background-color: #0056b3;
+    border-color: black;
+  }
+
+  .title-create-hat {
+    font-family: "Brush Script MT", cursive;
+    text-align: center;
+    color: #439dfd;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 4px 2px 2px rgb(0, 0, 0);
+    padding: 10px;
+  }
+
+  .custom-hat-form select {
+    background-color: white;
+
+  }
+  .custom-hat-form select option {
+    background-color: rgba(0, 86, 179, .3);
+    color: black;
+    mix-blend-mode: difference;
+  }
