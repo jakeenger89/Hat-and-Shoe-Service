@@ -92,7 +92,7 @@ function ShoeForm({getShoes}){
               <label htmlFor="color">Color</label>
             </div>
             <div className="form-floating mb-3">
-              <input value={pictureUrl} onChange={handlePicture} placeholder="Picture" required type="irl" name="pictureUrl" id="pictureUrl" className="form-control" />
+              <input value={pictureUrl} onChange={handlePicture} placeholder="Picture" required type="url" name="pictureUrl" id="pictureUrl" className="form-control" />
               <label htmlFor="pictureUrl">Picture Url</label>
             </div>
             <div className="mb-3">
@@ -100,7 +100,9 @@ function ShoeForm({getShoes}){
                 <option value="">Choose a location</option>
                 {bins.map(bin => {
                   return (
-                    <option key={bin.id} value={bin.id}>{bin.name}</option>
+                    <option key={bin.id} value={bin.id}>
+                      {bin.closet_name}
+                    </option>
                   )
                 })}
               </select>

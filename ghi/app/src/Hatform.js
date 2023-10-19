@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 function HatForm(props) {
   const [fabric, setFabric] = useState('');
-  const [styleName, setStyleName] = useState('');
+  const [style_name, setStyleName] = useState('');
   const [color, setColor] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
+  const [image_url, setImageUrl] = useState('');
   const [location, setLocation] = useState('');
   const [locations, setLocations] = useState([]);
 
@@ -29,13 +29,13 @@ function HatForm(props) {
     event.preventDefault();
     const data = {
       fabric,
-      styleName,
+      style_name,
       color,
-      imageUrl,
+      image_url,
       location,
     };
 
-    const hatUrl = 'http://localhost:8090/api/hats';
+    const hatUrl = 'http://localhost:8090/api/hats/';
     const fetchConfig = {
       method: 'post',
       body: JSON.stringify(data),
@@ -92,7 +92,7 @@ function HatForm(props) {
               <label htmlFor="fabric">Fabric</label>
             </div>
             <div className="form-floating mb-3">
-              <input onChange={handleStyleNameChange} value={styleName} placeholder="Style Name" required type="text" id="style_name" className="form-control" />
+              <input onChange={handleStyleNameChange} value={style_name} placeholder="Style Name" required type="text" id="style_name" className="form-control" />
               <label htmlFor="style_name">Style Name</label>
             </div>
             <div className="form-floating mb-3">
@@ -100,7 +100,7 @@ function HatForm(props) {
               <label htmlFor="color">Color</label>
             </div>
             <div className="form-floating mb-3">
-              <input onChange={handleImageUrlChange} value={imageUrl} placeholder="Picture URL" required type="url" id="image_url" className="form-control" />
+              <input onChange={handleImageUrlChange} value={image_url} placeholder="Picture URL" required type="url" id="image_url" className="form-control" />
               <label htmlFor="image_url">Picture URL</label>
             </div>
             <div className="form-floating mb-3">
@@ -108,7 +108,7 @@ function HatForm(props) {
                 <option value="">Choose a location</option>
                 {locations.map(loc => (
                   <option key={loc.id} value={loc.id}>
-                    {loc.name}
+                    {loc.closet_name}
                   </option>
                 ))}
               </select>
