@@ -48,7 +48,7 @@ function ShoeForm({getShoes}){
             setColor('')
             setPictureUrl('')
             setBin('')
-            getShoes()
+            
         }
     }
     function handleManufacturer(event){
@@ -97,10 +97,10 @@ function ShoeForm({getShoes}){
             </div>
             <div className="mb-3">
               <select value={bin} onChange={handleBin} required name="bin" id="bin" className="form-select">
-                <option value="">Choose a location</option>
+                <option value="">Choose a Bin</option>
                 {bins.map(bin => {
                   return (
-                    <option key={bin.id} value={bin.id}>{bin.name}</option>
+                    <option key={bin.id} value={bin.id}>{bin.closet_name}</option>
                   )
                 })}
               </select>

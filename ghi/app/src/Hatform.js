@@ -29,13 +29,13 @@ function HatForm(props) {
     event.preventDefault();
     const data = {
       fabric,
-      styleName,
+      style_name: styleName,
       color,
-      imageUrl,
+      image_url: imageUrl,
       location,
     };
 
-    const hatUrl = 'http://localhost:8090/api/hats';
+    const hatUrl = 'http://localhost:8090/api/hats/';
     const fetchConfig = {
       method: 'post',
       body: JSON.stringify(data),
@@ -47,7 +47,6 @@ function HatForm(props) {
     const response = await fetch(hatUrl, fetchConfig);
     if (response.ok) {
       const newHat = await response.json();
-      console.log(newHat);
       setFabric('');
       setStyleName('');
       setColor('');
@@ -108,7 +107,7 @@ function HatForm(props) {
                 <option value="">Choose a location</option>
                 {locations.map(loc => (
                   <option key={loc.id} value={loc.id}>
-                    {loc.name}
+                    {loc.closet_name}
                   </option>
                 ))}
               </select>
