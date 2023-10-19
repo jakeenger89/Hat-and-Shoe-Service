@@ -29,9 +29,15 @@ function HatForm(props) {
     event.preventDefault();
     const data = {
       fabric,
+<<<<<<< HEAD
       style_name,
       color,
       image_url,
+=======
+      style_name: styleName,
+      color,
+      image_url: imageUrl,
+>>>>>>> 905218ec5ea5ebb72247dfcfded7a9c389d7684f
       location,
     };
 
@@ -47,7 +53,6 @@ function HatForm(props) {
     const response = await fetch(hatUrl, fetchConfig);
     if (response.ok) {
       const newHat = await response.json();
-      console.log(newHat);
       setFabric('');
       setStyleName('');
       setColor('');

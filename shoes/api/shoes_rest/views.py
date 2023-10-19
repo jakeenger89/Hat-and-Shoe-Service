@@ -23,9 +23,14 @@ class ShoeEncoder(ModelEncoder):
         "model_name",
         "color",
         "picture_url",
-        "bin_id",
         "id",
     ]
+    encoders = {
+        "bin": BinVODetailEncoder(),
+    }
+
+    def get_extra_data(self, o):
+        return {"bin": o.bin.closet_name}
 
 class ShoeDetailEncoder(ModelEncoder):
     model = Shoes
@@ -34,12 +39,12 @@ class ShoeDetailEncoder(ModelEncoder):
         "model_name",
         "color",
         "picture_url",
-        "bin_id",
         "id",
     ]
     encoders = {
         "bin": BinVODetailEncoder(),
     }
+
 
 @require_http_methods(["GET","POST"])
 def api_list_shoes(request, bin_vo_id=None):
@@ -56,8 +61,8 @@ def api_list_shoes(request, bin_vo_id=None):
         content = json.loads(request.body)
 
         try:
-            bin_id = content["bin"]
-            bin = BinVO.objects.get(id=bin_id)
+            bin_vo_id = content["bin"]
+            bin = BinVO.objects.get(id=bin_vo_id)
             content["bin"] = bin
         except BinVO.DoesNotExist:
             return JsonResponse(

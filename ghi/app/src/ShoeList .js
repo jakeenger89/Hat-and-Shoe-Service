@@ -43,7 +43,7 @@ function ShoeList() {
             return (
               <tr key={shoe.id}>
                 <td>{ shoe.manufacturer }</td>
-                <td>{ shoe.bin }</td>
+                <td>{ shoe.bin}</td>
                 <td>{ shoe.color }</td>
                 <td>{ shoe.model_name }</td>
                 <td>
